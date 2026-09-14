@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/linked-cm/dcat.git"
   },
   "version": "1.0.3",
   "linkedPackage": true,
