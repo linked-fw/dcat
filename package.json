@@ -11,6 +11,7 @@
     "url": "git+https://github.com/linked-cm/dcat.git"
   },
   "version": "1.0.3",
+  "type": "module",
   "linkedPackage": true,
   "main": "lib/index.js",
   "types": "dist/lincd-dcat.d.ts",
