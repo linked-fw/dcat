@@ -1,5 +1,11 @@
 # @\_linked/dcat
 
+## 1.0.4
+
+### Patch Changes
+
+- [#11](https://github.com/linked-fw/dcat/pull/11) [`fe15831`](https://github.com/linked-fw/dcat/commit/fe158314cb299a1bb07e1dd59d2fab16336481f8) Thanks [@flyon](https://github.com/flyon)! - Declare npm as the package manager for this repo, convert the build scripts off `yarn`, and mark `package-lock.json` as a generated file.
+
 ## 1.0.2
 
 ### Patch Changes
