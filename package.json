@@ -53,7 +53,8 @@
     }
   },
   "dependencies": {
-    "@_linked/core": "^2.21.0"
+    "@_linked/core": "^2.21.0",
+    "@_linked/dcmi": "^1.1.2"
   },
   "devDependencies": {
     "@_linked/cli": "^1.19.0",
