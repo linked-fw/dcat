@@ -1,7 +1,4 @@
 import {createNameSpace} from '@_linked/core/utils/NameSpace';
-import {linkedOntology} from '../package.js';
-//import all the exports of this file as one variable called _this (we need this at the end)
-import * as _this from './dcat.js';
 
 const dataFile = '../data/dcat.json';
 
@@ -39,5 +36,3 @@ export const dcat = {
   servesDataset,
 };
 
-//Registers this ontology to LINCD.JS, so that data loading can be automated amongst other things
-linkedOntology(_this, ns, 'dcat', loadData, dataFile);
