@@ -1,5 +1,15 @@
 # @\_linked/dcat
 
+## 1.0.7
+
+### Patch Changes
+
+- [#18](https://github.com/linked-fw/dcat/pull/18) [`2826a47`](https://github.com/linked-fw/dcat/commit/2826a47013af5b12b34e0f454d3d6ed3d97032da) Thanks [@flyon](https://github.com/flyon)! - Point `types` at `index.d.ts` so a bare import gets types under node10 resolution.
+
+  `typesVersions` (`{"*": {"*": ["lib/esm/*"]}}`) is applied to the root `types` value, so the
+  previous value resolved to a path under `lib/esm/` that the build never emits. Subpath imports
+  resolved fine through `exports`, which hid the failure from a bare `import … from '@_linked/dcat'`.
+
 ## 1.0.6
 
 ### Patch Changes
