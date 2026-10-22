@@ -7,4 +7,4 @@ export const {
   registerPackageExport,
   packageExports,
   getPackageShape
-} = linkedPackage('@_linked/dcat');
+} = linkedPackage('@_linked/dcat', {mirrors: 'http://www.w3.org/ns/dcat#'});

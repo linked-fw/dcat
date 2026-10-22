@@ -1,14 +1,11 @@
 import {createNameSpace} from '@_linked/core/utils/NameSpace';
+import {loadOntologyFiles} from '@_linked/core/ontology/loadOntologyFiles';
 
-const dataFile = '../data/dcat.json';
+/** The package's ontology data, relative to this module: the W3C DCAT Turtle, unedited (copied into `lib/` by the build). */
+export const dataFiles = ['../data/dcat.ttl'];
 
-/**
- * Load the data of this ontology into memory, thus adding the properties of the entities of this ontology to the local graph.
- */
-export var loadData = () => {
-  //@ts-ignore
-  return import('../data/dcat.json', { with: { type: 'json' } }).then((data) => data.default);
-};
+/** Reads the package's ontology data (server only). */
+export const loadData = () => loadOntologyFiles(import.meta.url, dataFiles);
 
 /**
  * The namespace of this ontology, which can be used to create NamedNodes with URI's not listed in this file
