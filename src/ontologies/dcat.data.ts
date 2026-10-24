@@ -14,5 +14,5 @@ export const loadData = () => loadOntologyFiles(import.meta.url, dataFiles);
 export const ns = createNameSpace('http://www.w3.org/ns/dcat#');
 Prefix.add('dcat', 'http://www.w3.org/ns/dcat#');
 
-/** The ontology itself (its namespace IRI). */
-export const _ontologyResource = ns('');
+/** The ontology itself, as its data declares it (`a owl:Ontology`). */
+export const _ontologyResource = {id: 'http://www.w3.org/ns/dcat'};
