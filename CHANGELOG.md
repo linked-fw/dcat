@@ -1,5 +1,14 @@
 # @\_linked/dcat
 
+## 1.3.1
+
+### Patch Changes
+
+- [#56](https://github.com/linked-fw/dcat/pull/56) [`7889db2`](https://github.com/linked-fw/dcat/commit/7889db22db852c6c55107ac90bc33819b1bd1a09) Thanks [@flyon](https://github.com/flyon)! - `_ontologyResource` (`ontologies/dcat.data`) is the ontology's own IRI, `http://www.w3.org/ns/dcat`, as `src/data/dcat.ttl`
+  declares it with `a owl:Ontology`; it was the namespace IRI `http://www.w3.org/ns/dcat#`. Regenerated with
+  `@_linked/cli` 1.57.1, whose generator reads the declaration (and whose build check would otherwise
+  report the module stale). Terms are unchanged.
+
 ## 1.3.0
 
 ### Minor Changes
