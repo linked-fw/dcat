@@ -1,7 +1,7 @@
-import { dcterms } from '@_linked/dcmi/ontologies/dcterms';
+import * as dcterms from '@_linked/dcmi/ontologies/dcterms';
 import { literalProperty } from '@_linked/core/shapes/SHACL';
 import { Shape } from '@_linked/core/shapes/Shape';
-import { dcat } from '../ontologies/dcat.js';
+import * as dcat from '../ontologies/dcat.js';
 import { linkedShape } from '../package.js';
 
 @linkedShape
