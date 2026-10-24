@@ -1,5 +1,11 @@
 # @\_linked/dcat
 
+## 1.2.1
+
+### Patch Changes
+
+- [#52](https://github.com/linked-fw/dcat/pull/52) [`d568e0d`](https://github.com/linked-fw/dcat/commit/d568e0d3f7233aff778013c182735265939519d5) Thanks [@flyon](https://github.com/flyon)! - Ships `lib/esm/data/shapes.ttl`; core range raised.
+
 ## 1.2.0
 
 ### Minor Changes
