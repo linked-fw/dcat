@@ -1,5 +1,5 @@
 import { literalProperty } from '@_linked/core/shapes/SHACL';
-import { dcat } from '../ontologies/dcat.js';
+import * as dcat from '../ontologies/dcat.js';
 import { linkedShape } from '../package.js';
 import { Resource } from './Resource.js';
 

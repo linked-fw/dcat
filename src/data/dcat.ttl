@@ -1,3 +1,7 @@
+# Data Catalog Vocabulary (DCAT) - Version 3, as published by the W3C:
+# https://www.w3.org/ns/dcat.ttl (redirects to dcat3.ttl; dcat:version "3", Last-Modified 2025-09-03).
+# Unchanged apart from this comment. Refresh: see README §The data.
+
 @prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
