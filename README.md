@@ -47,3 +47,7 @@ The official file carries its own ontology header (on `<http://www.w3.org/ns/dca
 npx linked build    # checks the ontology modules, compiles, writes lib/esm/data/shapes.ttl
 npm test            # runs against lib/
 ```
+
+## Data license
+
+The package code is MIT licensed (see `LICENSE`). The bundled ontology data is derived from the W3C Data Catalog Vocabulary (DCAT) - Version 3 (https://www.w3.org/ns/dcat) and is not covered by the MIT license: it remains under the Creative Commons Attribution 4.0 International (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/, as its vocabulary file declares (dcterms:license). See `NOTICE`.
