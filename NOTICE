@@ -1,0 +1,8 @@
+@_linked/dcat
+
+The code in this package is licensed under the MIT License (see LICENSE).
+
+The MIT License does not cover the bundled ontology data. That data is derived from the W3C Data Catalog Vocabulary (DCAT) - Version 3 (https://www.w3.org/ns/dcat) and remains under its own license, as its vocabulary file declares (dcterms:license):
+
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
