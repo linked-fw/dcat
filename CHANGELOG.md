@@ -1,5 +1,11 @@
 # @\_linked/dcat
 
+## 1.3.2
+
+### Patch Changes
+
+- [#58](https://github.com/linked-fw/dcat/pull/58) [`5997ec4`](https://github.com/linked-fw/dcat/commit/5997ec45f6ce603175d7098860acc6628ca80b8d) Thanks [@flyon](https://github.com/flyon)! - License: MIT (data under its original license)
+
 ## 1.3.1
 
 ### Patch Changes
