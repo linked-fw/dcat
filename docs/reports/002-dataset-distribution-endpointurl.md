@@ -84,6 +84,8 @@ Create Now:
 
 - Create Now's legacy `getEndPoint` chain and the `DataService` write in `ApplicationProvider`
   go with Create Now's step R1 (master plan 080, step R1, "legacy chain … removed").
+- Addendum: typecheck in a worktree reads the main checkout's `lib/` (Deviations) is recorded
+  as `@_linked/cli` backlog 010 (`docs/backlog/010-worktree-typecheck-overlay.md`).
 
 ## Details
 
