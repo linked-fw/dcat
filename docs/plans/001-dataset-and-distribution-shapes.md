@@ -62,4 +62,4 @@ logs `shape check: 0 error(s), 0 warning(s)`.
 
 ## Progress
 
-- [ ] S1
+- [x] S1 — [report 002](../reports/002-dataset-distribution-endpointurl.md)

@@ -8,5 +8,7 @@
  * entry imports it instead of listing shapes itself.
  */
 import '../ontologies/dcat.register.js';
-import './DataService.js';
 import './Resource.js';
+import './DataService.js';
+import './Distribution.js';
+import './Dataset.js';
