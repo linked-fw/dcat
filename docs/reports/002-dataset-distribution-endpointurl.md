@@ -51,7 +51,7 @@ Create Now:
   `Tests 4 passed (4)`.
 - `npm run typecheck:gate` with the worktree's dcat `lib/` (see Deviations):
   `No new type errors. 0 pre-existing errors still in the baseline.` After landing and rebuilding
-  dcat in the main checkout, in the main checkout: see Details, "Gate after landing".
+  dcat, in the main checkout: the same (Details, "Gate after landing").
 - `CN_TEST_PORT=4402 npm run test:regular` (worktree):
   ```
   typecheck:gate                                   FAIL   14s
@@ -89,4 +89,10 @@ Create Now:
 
 ### Gate after landing
 
-GATE_AFTER_LANDING
+In the main checkout, after both repositories landed and `npx linked build` in
+`packages-local/_linked-dcat` (`✔ Build successful`):
+
+- `npm run typecheck:gate`: `No new type errors. 0 pre-existing errors still in the baseline.`
+- `npx vitest run src/__tests__/shapeCheck.test.ts`: `Test Files 1 passed (1)`, `Tests 4 passed (4)`.
+- dcat `npm test`: `# pass 4`, `# fail 0`.
+- The owner's CN on 4040 kept running: `curl http://localhost:4040/` → `200`.
