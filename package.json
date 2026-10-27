@@ -13,7 +13,9 @@
   "version": "1.3.2",
   "packageManager": "npm@12.2.0",
   "type": "module",
-  "linkedPackage": true,
+  "linked": {
+    "kind": "ontology"
+  },
   "linkedOntologies": {
     "dcat": {
       "namespace": "http://www.w3.org/ns/dcat#"
