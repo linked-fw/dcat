@@ -1,7 +1,7 @@
 # @_linked/dcat
 
 [DCAT 3](https://www.w3.org/TR/vocab-dcat-3/) for Linked: the Data Catalog Vocabulary as Turtle,
-an accessor for every term, and the `Resource` and `DataService` shapes. The package mirrors
+an accessor for every term, and shapes for the core classes. The package mirrors
 `http://www.w3.org/ns/dcat#` and holds only its terms.
 
 ## Terms
@@ -16,6 +16,23 @@ static targetClass = dcat.DataService;
 `dataFiles`, `_ontologyResource` and `loadData()`. `linked generate-ontology` writes the modules
 from the data (`package.json` `"linkedOntologies"`), and `linked build` fails when they are stale;
 never edit them by hand.
+
+## Shapes
+
+`import '@_linked/dcat/shapes/index'` registers them all; each is also `shapes/<Name>`.
+
+| Shape | Class | Properties |
+|---|---|---|
+| `Resource` | `dcat:Resource` | `title`, `description` |
+| `Dataset` (→ `Resource`) | `dcat:Dataset` | `publisher`, `accessRights`, `conformsTo`, `distributions` |
+| `Distribution` (→ `Shape`) | `dcat:Distribution` | `title`, `accessURL`, `accessService` |
+| `DataService` (→ `Resource`) | `dcat:DataService` | `endpointURL`, `servesDatasets` |
+
+IRI-valued properties (`endpointURL`, `accessURL`, `publisher`, `accessRights`, `conformsTo`) are
+object properties: write and read them as `{id}`. `Distribution` extends `Shape` because DCAT
+gives `dcat:Distribution` no superclass. DCAT 3 axiomatises `accessURL` as the chain
+`accessService`/`endpointURL`, so a distribution with an access service has that service's
+`endpointURL` as its `accessURL`.
 
 ## The data
 
