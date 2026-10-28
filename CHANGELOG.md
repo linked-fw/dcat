@@ -1,5 +1,21 @@
 # @\_linked/dcat
 
+## 1.4.0
+
+### Minor Changes
+
+- [#63](https://github.com/linked-fw/dcat/pull/63) [`a159f80`](https://github.com/linked-fw/dcat/commit/a159f80c14c78aed0ab0b78d6f5dfbcd845d9fe9) Thanks [@flyon](https://github.com/flyon)! - New `Dataset` (`dcat:Dataset`, extends `Resource`: `publisher`, `accessRights`, `conformsTo`,
+  `distributions`) and `Distribution` (`dcat:Distribution`, extends `Shape`: `title`, `accessURL`,
+  `accessService`) shapes. `DataService` gains `servesDatasets` (`dcat:servesDataset`).
+  
+  Breaking for `DataService.endpointURL`: it is now an object property, as DCAT specifies
+  (`dcat:endpointURL` ranges over resources). Write it as `{id: url}` and read `endpointURL.id`;
+  it was a string literal.
+
+### Patch Changes
+
+- [#63](https://github.com/linked-fw/dcat/pull/63) [`56dfac4`](https://github.com/linked-fw/dcat/commit/56dfac4415945a5af52fa07bfbdea56ebf647cc5) Thanks [@flyon](https://github.com/flyon)! - `package.json` says what this package is in `"linked": {"kind": "ontology"}` instead of `"linkedPackage": true`, which the CLI and server no longer read.
+
 ## 1.3.2
 
 ### Patch Changes
