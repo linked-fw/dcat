@@ -1,5 +1,5 @@
 import './types.js';
-import './ontologies/dcat.register.js';
+import './ontologies/index.js';
 
 //SHAPES FIRST
 import './shapes/index.js';
