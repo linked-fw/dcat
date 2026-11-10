@@ -2,8 +2,8 @@
 date: 2026-10-26
 summary: >
   `Dataset` and `Distribution` shapes, `DataService.endpointURL` as an IRI (`{id}`) and
-  `DataService.servesDatasets`; Create Now's two `endpointURL` call sites adapted in the same
-  landing. Minor (1.4.0). Step S1 of sub-plan 001 (Create Now master plan 080).
+  `DataService.servesDatasets`; the host app's two `endpointURL` call sites adapted in the same
+  landing. Minor (1.4.0). Step S1 of sub-plan 001.
 ---
 
 # 002 — Dataset and Distribution shapes, endpointURL as an IRI
@@ -12,10 +12,10 @@ summary: >
 
 ### Summary
 
-Gives Create Now the DCAT shapes its dataset records extend (contract C5 of
+Gives the host app the DCAT shapes its dataset records extend (contract C5 of
 [sub-plan 001](../plans/001-dataset-and-distribution-shapes.md)): a `Dataset` and a
 `Distribution` shape, and `DataService.endpointURL` as an object property, as DCAT specifies.
-Changeset: minor (1.4.0); the `endpointURL` type change is breaking for its two Create Now call
+Changeset: minor (1.4.0); the `endpointURL` type change is breaking for its two host-app call
 sites, adapted in the same landing.
 
 ### Changes
@@ -32,27 +32,26 @@ dcat:
 - `src/shapes/index.ts` registers both; README gains a Shapes section; changeset
   `dataset-distribution-shapes.md` (minor).
 
-Create Now:
-- `src/backend/shapes/ApplicationProvider.ts`: writes `endpointURL: {id: url}`.
-- `src/backend/shapes/ProjectProvider.ts` (`getEndPoint`): reads `endpointURL?.id`.
+Host app:
+- the provider that writes a `DataService` writes `endpointURL: {id: url}`.
+- the legacy endpoint lookup reads `endpointURL?.id`.
 
 ### Verification
 
 - dcat `npx linked build`: `✔ Build successful`.
 - dcat `npm test`: `# pass 4` / `# fail 0`.
-- `ls -l node_modules/@_linked/dcat` in Create Now:
+- `ls -l node_modules/@_linked/dcat` in the host app:
   `node_modules/@_linked/dcat -> ../../packages-local/_linked-dcat`; in the worktree,
   `npx linked doctor resolve`: `@_linked/dcat  s1/packages-local/_linked-dcat … overlay`.
-- Create Now boot on 4052 (worktree): `Up and running at http://localhost:4052`,
+- Host app boot on 4052 (worktree): `Up and running at http://localhost:4052`,
   `[dataset-audit] all 15 recorded datasets of 6 projects are present`, and no `shape check` line:
   `@_linked/server`'s ontology phase prints `shape check: N error(s), M warning(s)` only when
   there are findings (`if (findings.length) log(…)`), so a clean check prints nothing.
-- `npx vitest run src/__tests__/shapeCheck.test.ts`: `Test Files 1 passed (1)`,
-  `Tests 4 passed (4)`.
-- `npm run typecheck:gate` with the worktree's dcat `lib/` (see Deviations):
+- The host app's shape-check test: `Test Files 1 passed (1)`, `Tests 4 passed (4)`.
+- The host app's typecheck gate with the worktree's dcat `lib/` (see Deviations):
   `No new type errors. 0 pre-existing errors still in the baseline.` After landing and rebuilding
   dcat, in the main checkout: the same (Details, "Gate after landing").
-- `CN_TEST_PORT=4402 npm run test:regular` (worktree):
+- The host app's regular test set (worktree):
   ```
   typecheck:gate                                   FAIL   14s
   unit (vitest)                                    PASS   39s
@@ -82,8 +81,8 @@ Create Now:
 
 ### Follow-ups
 
-- Create Now's legacy `getEndPoint` chain and the `DataService` write in `ApplicationProvider`
-  go with Create Now's step R1 (master plan 080, step R1, "legacy chain … removed").
+- The host app's legacy endpoint lookup and its `DataService` write go with the host app's
+  step R1 of its datasets plan.
 - Addendum: typecheck in a worktree reads the main checkout's `lib/` (Deviations) is recorded
   as `@_linked/cli` backlog 010 (`docs/backlog/010-worktree-typecheck-overlay.md`).
 
@@ -94,7 +93,7 @@ Create Now:
 In the main checkout, after both repositories landed and `npx linked build` in
 `packages-local/_linked-dcat` (`✔ Build successful`):
 
-- `npm run typecheck:gate`: `No new type errors. 0 pre-existing errors still in the baseline.`
-- `npx vitest run src/__tests__/shapeCheck.test.ts`: `Test Files 1 passed (1)`, `Tests 4 passed (4)`.
+- The host app's typecheck gate: `No new type errors. 0 pre-existing errors still in the baseline.`
+- The host app's shape-check test: `Test Files 1 passed (1)`, `Tests 4 passed (4)`.
 - dcat `npm test`: `# pass 4`, `# fail 0`.
-- The owner's CN on 4040 kept running: `curl http://localhost:4040/` → `200`.
+- The owner's running host app on 4040 kept running: `curl http://localhost:4040/` → `200`.
