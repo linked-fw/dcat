@@ -7,7 +7,7 @@
  * plain node (no CSS, no React tree) as well as in a bundle. The package
  * entry imports it instead of listing shapes itself.
  */
-import '../ontologies/dcat.register.js';
+import '../ontologies/index.js';
 import './Resource.js';
 import './DataService.js';
 import './Distribution.js';

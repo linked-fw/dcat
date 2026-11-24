@@ -12,8 +12,11 @@ import * as dcat from '@_linked/dcat/ontologies/dcat';
 static targetClass = dcat.DataService;
 ```
 
-`ontologies/dcat` has one named export per term (52); `ontologies/dcat.data` holds `ns`,
-`dataFiles`, `_ontologyResource` and `loadData()`. `linked generate-ontology` writes the modules
+`ontologies/dcat` has one named export per term (52), each an `{id}` with the term's full IRI.
+`ontologies/index` registers the ontology with its data and suggested prefix; the package entry and
+`shapes/index` import it. The package registers no prefix: an app lists the prefixes it uses in
+its own prefix map. Where code needs a namespace function, core's `createNameSpace('http://www.w3.org/ns/dcat#')` gives one.
+`linked generate-ontology` writes the modules
 from the data (`package.json` `"linkedOntologies"`), and `linked build` fails when they are stale;
 never edit them by hand.
 
@@ -54,9 +57,7 @@ New classes or properties never go there; a term a standard lacks belongs in the
 ontology package.
 
 The official file carries its own ontology header (on `<http://www.w3.org/ns/dcat>`, without the
-`#`), so this package has no `-added` file. 
-`_ontologyResource` is that ontology IRI, `http://www.w3.org/ns/dcat` (the generator takes it from the
-`owl:Ontology` declaration).
+`#`), so this package has no `-added` file.
 
 ## Development
 
